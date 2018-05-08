@@ -1,0 +1,95 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="bootstrap\dist\css\bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome\css\font-awesome.min.css">
+  </head>
+  <body>
+      <div class="flex">
+          <h1>Weather Chat</h1>
+          <input class="cityInput" type="text" placeholder="City name"/>
+          <button class="btn btn-primary submitCity" type="button">Submit</button>
+      </div>
+      
+      <div class="posts flex">
+            <ul class="commentsList">
+
+            </ul>
+      </div>
+
+      <script id="posts-template" type="text/x-handlebars-template">
+
+     <li class="postLi">
+         <h3>{{name}}</h3>
+            <p>{{main.temp}} degrees Kelvin</p>
+            <section class="commentsSec">
+                <div class="comments"></div>
+                <form class="commentsForm">
+                <input class="commentInput" type="text" placeholder="comment about the weather in {{name}}"/>
+                <button type="button" class="btn btn-primary submitComment">Submit</button>
+                </form>
+            </section>
+          </li>
+
+      </script>
+
+    <script type="module" src="main.js"></script>
+    <script src="handlebars\dist\handlebars.min.js"></script>
+    <script src="jquery\dist\jquery.min.js"></script>
+  </body>
+</html> -->
+
+
+<!--  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Page</title>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper container">
+        <h1><i class="fa fa-cloud fa-2x" aria-hidden="true"></i>
+            Weather chat</h1>
+        <form action="">
+            <input type="text" class="userInput" placeholder="Type a City Name">
+            <button type="button" class="searchWeather btn btn-info">go</button>
+        </form>
+        <div class="display">
+            <div class="commentsDisplay">
+            </div>
+        </div>
+    </div>
+    <script id="template" type="text/x-handlebars-template">
+        <div class="weatherDisplay">
+            <h2 class="cityWeather"> {{cityName}} <i class="fa fa-thermometer-empty" aria-hidden="true"></i> {{currentTemp}} {{weatherDiscription}}</h2><br>
+            <ul class="weatherComments">
+                {{#each weatherComments}}
+                <li>{{text}}</li>
+                {{/each}}
+            </ul>
+            <input type="text" class="commentInput">
+            <button class="commentBtn btn btn-info"> comment</button>
+            <span class="removeResult"><i class="fa fa-trash fa-3x" aria-hidden="true"></i></span>
+        </div>
+    </script>
+
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="handlebars/dist/handlebars.min.js"></script>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
